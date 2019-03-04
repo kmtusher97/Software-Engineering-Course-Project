@@ -1,16 +1,16 @@
-#Project Name: Preformence Tracker
+# Project Name: Preformence Tracker
 
 
-#Description:
+# Description:
 
 
-#Table of Contents:
+# Table of Contents:
 
 
-#Installation:
+# Installation:
 
 
-#Usage:
+# Usage:
 
 
-#Contributing:
+# Contributing:
