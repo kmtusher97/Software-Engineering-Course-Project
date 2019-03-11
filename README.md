@@ -1,16 +1,3 @@
-# Project Name: Preformence Tracker
+### Preformence Tracker
 
-
-## Description:
-
-
-## Table of Contents:
-
-
-## Installation:
-
-
-## Usage:
-
-
-## Contributing:
+Competitive programming is the best platform for creating quality programmers. Now a days all most every university having computer science department are participating programming contests regularly. To perform better in these contests need better training. The training procedure is time consuming and tough task. On of the most painful task is tracking the performances of the contestants regularly. Because there are lot of online judges and contest sites. In an institution, there may be a lot of contestants having a lot accounts in various online judges. So trainers need an integrated system that contain all necessary data of the contestants and their performance history in different sites. This system solves the problem of trainers tracking the performance of contestants. Picking new contestants also a difficult task for the trainer since initially there is a lot of students he/she have to train. Checking each id of the online judges of the contestants is a really boring task. [Read More](https://github.com/kmtusher97/Software-Engineering-Course-Project/wiki)
