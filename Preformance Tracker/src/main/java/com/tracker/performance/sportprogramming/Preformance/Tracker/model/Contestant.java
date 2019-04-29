@@ -28,7 +28,7 @@ public class Contestant {
 
     private String country;
 
-    public Contestant(Long userID, String handle, String department, String session, String batch, String dateOfBirth, int roll, String mobileNo, String tshirtSize, String country) {
+    public Contestant(Long userID, String handle, String department, String session, String batch, String dateOfBirth, Long roll, String mobileNo, String tshirtSize, String country) {
         this.userID = userID;
         this.handle = handle;
         this.department = department;
@@ -89,11 +89,11 @@ public class Contestant {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getRoll() {
+    public Long getRoll() {
         return roll;
     }
 
-    public void setRoll(int roll) {
+    public void setRoll(Long roll) {
         this.roll = roll;
     }
 
