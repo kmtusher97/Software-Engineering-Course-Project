@@ -7,7 +7,7 @@ import javax.persistence.*;
  *
  * @author: Masum Bhuiyan
  * @since April 29, 2019
- */
+ */ 
 @Entity
 @Table(name = "ContestantHandle")
 public class ContestantHandle {
