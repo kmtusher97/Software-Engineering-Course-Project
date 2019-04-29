@@ -1,5 +1,11 @@
 package com.tracker.performance.sportprogramming.Preformance.Tracker.model;
 
+/**
+ * Entity Class Contestant Handle
+ *
+ * @author: Masum Bhuiyan
+ * @since April 29, 2019
+ */
 public class ContestantHandle {
 
     private String uvaID;
@@ -14,7 +20,12 @@ public class ContestantHandle {
 
     private String vjudgeUsername;
 
-    public ContestantHandle(String uvaID, String uvaUsername, String codeforcesHandle, String codechefHandle, String lightOjID, String vjudgeUsername) {
+    public ContestantHandle(String uvaID,
+                            String uvaUsername,
+                            String codeforcesHandle,
+                            String codechefHandle,
+                            String lightOjID,
+                            String vjudgeUsername) {
         this.uvaID = uvaID;
         this.uvaUsername = uvaUsername;
         this.codeforcesHandle = codeforcesHandle;

@@ -1,11 +1,11 @@
 package com.tracker.performance.sportprogramming.Preformance.Tracker.model;
 
 /**
- * class name: Contestant
- * author: Masum Bhuiyan
- * created on April 29, 2019
+ * Entity Class Contestant
+ *
+ * @author: Masum Bhuiyan
+ * @since April 29, 2019
  */
-
 public class Contestant {
 
     private Long userID;
