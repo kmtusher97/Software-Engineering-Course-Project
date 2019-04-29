@@ -17,7 +17,7 @@ public class UserController {
     @Autowired
     UserServices userServices;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "/login/**", method = RequestMethod.GET)
     public ModelAndView userLogin() {
         ModelAndView loginModelAndView = new ModelAndView("Login");
 
@@ -37,7 +37,7 @@ public class UserController {
          * or
          */
         if(authenticatedUser == null || !authenticatedUser.getPassword().equals(user.getPassword())) {
-            return new ModelAndView("redirect:/login");
+            return new ModelAndView("redirect:/login/" + "error");
         }
 
         if(userServices.isAdmin(authenticatedUser.getUserId())) {
