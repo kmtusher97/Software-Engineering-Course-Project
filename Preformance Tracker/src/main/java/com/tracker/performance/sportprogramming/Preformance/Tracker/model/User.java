@@ -1,9 +1,5 @@
 package com.tracker.performance.sportprogramming.Preformance.Tracker.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -13,6 +9,7 @@ import java.io.Serializable;
  * @author Kamrul Hasan
  * @version 1.0
  * @since April 29, 2019
+ * @modified Meherunessa Tania
  */
 @Entity
 @Table(name = "User")
@@ -53,5 +50,14 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
