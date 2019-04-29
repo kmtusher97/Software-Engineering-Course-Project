@@ -18,4 +18,9 @@ public class UserServicesImplementation implements UserServices {
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+
+    @Override
+    public boolean isAdmin(Long userId) {
+        return userId == 1001;
+    }
 }
