@@ -71,16 +71,10 @@ public class UserController {
     @PostMapping(value = "/user/save")
     public ModelAndView saveNewUserInfo(@ModelAttribute("user") User user,
                                         @ModelAttribute("contestant") Contestant contestant) {
-        System.err.println(user);
-        System.err.println(contestant);
-
         userServices.saveOrUpdate(user);
 
         user = userServices.findByEmail(user.getEmail());
         contestant.setUser(user);
-
-        System.err.println(user);
-        System.err.println(contestant);
 
         contestantServices.saveContestant(contestant);
 
