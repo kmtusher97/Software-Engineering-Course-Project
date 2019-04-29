@@ -20,6 +20,11 @@ public class UserServicesImplementation implements UserServices {
     }
 
     @Override
+    public void saveOrUpdate(User user) {
+        userRepository.save(user);
+    }
+
+    @Override
     public boolean isAdmin(Long userId) {
         return userId == 1001;
     }

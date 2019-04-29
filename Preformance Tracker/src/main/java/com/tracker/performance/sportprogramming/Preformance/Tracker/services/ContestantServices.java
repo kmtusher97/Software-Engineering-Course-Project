@@ -5,4 +5,6 @@ import com.tracker.performance.sportprogramming.Preformance.Tracker.model.Contes
 public interface ContestantServices {
 
     Contestant getContestantById(Long id);
+
+    void saveContestant(Contestant contestant);
 }

@@ -17,4 +17,9 @@ public class ContestantServicesImplementation implements ContestantServices {
     public Contestant getContestantById(Long id) {
         return contestantRepository.getOne(id);
     }
+
+    @Override
+    public void saveContestant(Contestant contestant) {
+        contestantRepository.save(contestant);
+    }
 }

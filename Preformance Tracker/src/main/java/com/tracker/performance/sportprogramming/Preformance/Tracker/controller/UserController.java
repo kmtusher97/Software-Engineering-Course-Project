@@ -2,7 +2,9 @@ package com.tracker.performance.sportprogramming.Preformance.Tracker.controller;
 
 import com.tracker.performance.sportprogramming.Preformance.Tracker.model.Contestant;
 import com.tracker.performance.sportprogramming.Preformance.Tracker.model.User;
+import com.tracker.performance.sportprogramming.Preformance.Tracker.services.ContestantServices;
 import com.tracker.performance.sportprogramming.Preformance.Tracker.services.UserServices;
+import com.tracker.performance.sportprogramming.Preformance.Tracker.validator.UserDataValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,9 @@ public class UserController {
 
     @Autowired
     UserServices userServices;
+
+    @Autowired
+    ContestantServices contestantServices;
 
     @RequestMapping(value = "/login/**", method = RequestMethod.GET)
     public ModelAndView userLogin() {
@@ -63,8 +68,22 @@ public class UserController {
         return registrationModelAndView;
     }
 
-    @RequestMapping(value = "/user/save", method = RequestMethod.POST)
-    public ModelAndView saveNewUserInfo() {
-        return null;
+    @PostMapping(value = "/user/save")
+    public ModelAndView saveNewUserInfo(@ModelAttribute("user") User user,
+                                        @ModelAttribute("contestant") Contestant contestant) {
+        System.err.println(user);
+        System.err.println(contestant);
+
+        userServices.saveOrUpdate(user);
+
+        user = userServices.findByEmail(user.getEmail());
+        contestant.setUser(user);
+
+        System.err.println(user);
+        System.err.println(contestant);
+
+        contestantServices.saveContestant(contestant);
+
+        return new ModelAndView("redirect:/login");
     }
 }

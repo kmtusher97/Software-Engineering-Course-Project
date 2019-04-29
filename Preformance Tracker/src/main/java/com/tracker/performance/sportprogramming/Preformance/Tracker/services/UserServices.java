@@ -6,5 +6,7 @@ public interface UserServices {
 
     User findByEmail(String Email);
 
+    void saveOrUpdate(User user);
+
     boolean isAdmin(Long userId);
 }

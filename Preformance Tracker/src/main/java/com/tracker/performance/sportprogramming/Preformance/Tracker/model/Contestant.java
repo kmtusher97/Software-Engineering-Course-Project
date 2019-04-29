@@ -1,6 +1,7 @@
 package com.tracker.performance.sportprogramming.Preformance.Tracker.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 /**
  * Entity Class Contestant
@@ -13,26 +14,36 @@ import javax.persistence.*;
 public class Contestant {
 
     @Id
-    private Long userId;
+    private Long id;
 
+    @Column(name = "name", length = 70)
     private String name;
 
+    @Column(name = "handle", unique = true, length = 40)
     private String handle;
 
+    @Column(name = "department")
     private String department;
 
+    @Column(name = "session")
     private String session;
 
+    @Column(name = "batch")
     private String batch;
 
-    private String dateOfBirth;
+    @Column(name = "dateOfBirth")
+    private LocalDate dateOfBirth;
 
+    @Column(name = "roll")
     private Long roll;
 
+    @Column(name = "mobileNo")
     private String mobileNo;
 
+    @Column(name = "tshirtSize")
     private String tshirtSize;
 
+    @Column(name = "country")
     private String country;
 
     /**
@@ -40,17 +51,23 @@ public class Contestant {
      * have common primary key
      */
     @OneToOne
-    @JoinColumn
     @MapsId
     private User user;
 
-
-    public Long getUserId() {
-        return userId;
+    public Contestant() {
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public Contestant(User user) {
+        this.user = user;
+    }
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -93,11 +110,11 @@ public class Contestant {
         this.batch = batch;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -139,5 +156,22 @@ public class Contestant {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Contestant{" +
+                "userId=" + id +
+                ", name='" + name + '\'' +
+                ", handle='" + handle + '\'' +
+                ", department='" + department + '\'' +
+                ", session='" + session + '\'' +
+                ", batch='" + batch + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", roll=" + roll +
+                ", mobileNo='" + mobileNo + '\'' +
+                ", tshirtSize='" + tshirtSize + '\'' +
+                ", country='" + country + '\'' +
+                '}';
     }
 }

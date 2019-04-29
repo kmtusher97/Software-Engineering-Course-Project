@@ -82,4 +82,13 @@ public class User implements Serializable {
     public void setContestant(Contestant contestant) {
         this.contestant = contestant;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
