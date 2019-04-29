@@ -1,5 +1,6 @@
 package com.tracker.performance.sportprogramming.Preformance.Tracker.controller;
 
+import com.tracker.performance.sportprogramming.Preformance.Tracker.model.Contestant;
 import com.tracker.performance.sportprogramming.Preformance.Tracker.model.User;
 import com.tracker.performance.sportprogramming.Preformance.Tracker.services.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +47,24 @@ public class UserController {
         else {
             return new ModelAndView("redirect:/contestant/home");
         }
+    }
+
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public ModelAndView registerNewUser() {
+        ModelAndView registrationModelAndView = new ModelAndView("Registration");
+
+        User user = new User();
+        Contestant contestant = new Contestant();
+
+        registrationModelAndView.addObject("user", user);
+        registrationModelAndView.addObject("contestant", contestant);
+
+        return registrationModelAndView;
+    }
+
+    @RequestMapping(value = "/user/save", method = RequestMethod.POST)
+    public ModelAndView saveNewUserInfo() {
+        return null;
     }
 }

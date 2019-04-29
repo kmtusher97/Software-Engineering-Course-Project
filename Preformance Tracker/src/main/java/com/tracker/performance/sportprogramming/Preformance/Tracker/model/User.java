@@ -67,6 +67,14 @@ public class User implements Serializable {
         this.password = password;
     }
 
+    public String getConfirmedPassword() {
+        return confirmedPassword;
+    }
+
+    public void setConfirmedPassword(String confirmedPassword) {
+        this.confirmedPassword = confirmedPassword;
+    }
+
     public Contestant getContestant() {
         return contestant;
     }

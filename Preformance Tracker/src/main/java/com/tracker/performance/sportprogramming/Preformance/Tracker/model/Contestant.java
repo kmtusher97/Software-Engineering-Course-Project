@@ -15,6 +15,8 @@ public class Contestant {
     @Id
     private Long userId;
 
+    private String name;
+
     private String handle;
 
     private String department;
@@ -49,6 +51,14 @@ public class Contestant {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getHandle() {
