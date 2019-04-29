@@ -68,6 +68,7 @@ public class UserController {
         return registrationModelAndView;
     }
 
+    
     @PostMapping(value = "/user/save")
     public ModelAndView saveNewUserInfo(@ModelAttribute("user") User user,
                                         @ModelAttribute("contestant") Contestant contestant) {
