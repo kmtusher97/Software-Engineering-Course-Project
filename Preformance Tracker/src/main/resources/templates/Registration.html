@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User Registration</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link/>
+    <script th:src="@{/javascript/registration.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}">
 </head>
 <body>
 <body>
@@ -53,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <label for="disc">Discription</label>
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="disc" class="form-control" rows="3"></textarea>
                     </div>
 
                     <button id="submit" type="submit" value="submit" class="btn btn-primary center">Submit</button>
