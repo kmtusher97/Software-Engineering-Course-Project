@@ -1,12 +1,19 @@
 package com.tracker.performance.sportprogramming.Preformance.Tracker.model;
 
+import javax.persistence.*;
+
 /**
  * Entity Class Contestant Handle
  *
  * @author: Masum Bhuiyan
  * @since April 29, 2019
  */
+@Entity
+@Table(name = "ContestantHandle")
 public class ContestantHandle {
+
+    @Id
+    private Long userId;
 
     private String uvaID;
 
@@ -20,18 +27,21 @@ public class ContestantHandle {
 
     private String vjudgeUsername;
 
-    public ContestantHandle(String uvaID,
-                            String uvaUsername,
-                            String codeforcesHandle,
-                            String codechefHandle,
-                            String lightOjID,
-                            String vjudgeUsername) {
-        this.uvaID = uvaID;
-        this.uvaUsername = uvaUsername;
-        this.codeforcesHandle = codeforcesHandle;
-        this.codechefHandle = codechefHandle;
-        this.lightOjID = lightOjID;
-        this.vjudgeUsername = vjudgeUsername;
+    /**
+     * has one to one relationship with user
+     * have common primary key
+     */
+    @OneToOne
+    @JoinColumn
+    @MapsId
+    private User user;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getUvaID() {
@@ -80,5 +90,13 @@ public class ContestantHandle {
 
     public void setVjudgeUsername(String vjudgeUsername) {
         this.vjudgeUsername = vjudgeUsername;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

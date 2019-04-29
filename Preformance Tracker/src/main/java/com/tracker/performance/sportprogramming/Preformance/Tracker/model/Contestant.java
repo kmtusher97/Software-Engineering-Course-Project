@@ -1,14 +1,19 @@
 package com.tracker.performance.sportprogramming.Preformance.Tracker.model;
 
+import javax.persistence.*;
+
 /**
  * Entity Class Contestant
  *
  * @author: Masum Bhuiyan
  * @since April 29, 2019
  */
+@Entity
+@Table(name = "Contestant")
 public class Contestant {
 
-    private Long userID;
+    @Id
+    private Long userId;
 
     private String handle;
 
@@ -28,25 +33,22 @@ public class Contestant {
 
     private String country;
 
-    public Contestant(Long userID, String handle, String department, String session, String batch, String dateOfBirth, Long roll, String mobileNo, String tshirtSize, String country) {
-        this.userID = userID;
-        this.handle = handle;
-        this.department = department;
-        this.session = session;
-        this.batch = batch;
-        this.dateOfBirth = dateOfBirth;
-        this.roll = roll;
-        this.mobileNo = mobileNo;
-        this.tshirtSize = tshirtSize;
-        this.country = country;
+    /**
+     * has one to one relationship with user
+     * have common primary key
+     */
+    @OneToOne
+    @JoinColumn
+    @MapsId
+    private User user;
+
+
+    public Long getUserId() {
+        return userId;
     }
 
-    public Long getUserID() {
-        return userID;
-    }
-
-    public void setUserID(Long userID) {
-        this.userID = userID;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getHandle() {
@@ -119,5 +121,13 @@ public class Contestant {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -31,6 +31,18 @@ public class User implements Serializable {
     @Transient
     private String confirmedPassword;
 
+    /**
+     * Has one to one relationship with Contestant
+     */
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Contestant contestant;
+
+    /**
+     * Has one to one relationship with Contestant Handles
+     */
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private ContestantHandle contestantHandle;
+
     public Long getUserId() {
         return userId;
     }
@@ -53,5 +65,13 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Contestant getContestant() {
+        return contestant;
+    }
+
+    public void setContestant(Contestant contestant) {
+        this.contestant = contestant;
     }
 }
