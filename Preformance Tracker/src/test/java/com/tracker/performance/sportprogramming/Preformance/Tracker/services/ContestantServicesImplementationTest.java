@@ -20,16 +20,7 @@ public class ContestantServicesImplementationTest {
 
     @Test
     public void getAllContestants() throws Exception {
-        ContestantServicesImplementation contestantServices = new ContestantServicesImplementation();
 
-        List<Contestant> contestantList = contestantServices.getAllContestants();
-
-        System.err.println(contestantList.size());
-
-        /*for(Contestant contestant : contestantList) {
-            Assert.assertTrue(contestant.getId() == null);
-            System.err.println(contestant.getId());
-        }*/
     }
 }
 
