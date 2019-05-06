@@ -55,6 +55,9 @@ public class Contestant {
     @Column
     private Long accepted;
 
+    @Column
+    private Long teamNo;
+
     /**
      * has one to one relationship with user
      * have common primary key
@@ -183,6 +186,14 @@ public class Contestant {
         this.accepted = accepted;
     }
 
+    public Long getTeamNo() {
+        return teamNo;
+    }
+
+    public void setTeamNo(Long teamNo) {
+        this.teamNo = teamNo;
+    }
+
     public User getUser() {
         return user;
     }
@@ -208,6 +219,7 @@ public class Contestant {
                 ", rating=" + rating +
                 ", day=" + day +
                 ", accepted=" + accepted +
+                ", teamNo=" + teamNo +
                 ", user=" + user +
                 '}';
     }

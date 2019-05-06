@@ -35,7 +35,7 @@ public class ContestantController {
         Collections.sort(contestantList, (contestant1, contestant2) -> {
             return (int) (contestant2.getRating() - contestant1.getRating());
         });
-
+        
         modelAndView.addObject("contestantList", contestantList);
         return modelAndView;
     }
