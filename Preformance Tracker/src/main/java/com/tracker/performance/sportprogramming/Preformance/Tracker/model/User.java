@@ -43,9 +43,7 @@ public class User implements Serializable {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private ContestantHandle contestantHandle;
 
-    public Long getUserId() {
-        return userId;
-    }
+    public Long getUserId() { return userId; }
 
     public void setUserId(Long userId) {
         this.userId = userId;
