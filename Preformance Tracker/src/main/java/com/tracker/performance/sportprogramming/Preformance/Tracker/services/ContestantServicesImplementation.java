@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class ContestantServicesImplementation implements ContestantServices {
@@ -21,5 +23,11 @@ public class ContestantServicesImplementation implements ContestantServices {
     @Override
     public void saveContestant(Contestant contestant) {
         contestantRepository.save(contestant);
+    }
+
+    @Override
+    public List<Contestant> getAllContestants() {
+        List<Contestant> contestantRepositoryAll = contestantRepository.findAll();
+        return contestantRepositoryAll;
     }
 }
