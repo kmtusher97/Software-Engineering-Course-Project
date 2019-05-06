@@ -46,6 +46,15 @@ public class Contestant {
     @Column(name = "country")
     private String country;
 
+    @Column
+    private Long rating;
+
+    @Column
+    private Long day;
+
+    @Column
+    private Long accepted;
+
     /**
      * has one to one relationship with user
      * have common primary key
@@ -150,6 +159,30 @@ public class Contestant {
         this.country = country;
     }
 
+    public Long getRating() {
+        return rating;
+    }
+
+    public void setRating(Long rating) {
+        this.rating = rating;
+    }
+
+    public Long getDay() {
+        return day;
+    }
+
+    public void setDay(Long day) {
+        this.day = day;
+    }
+
+    public Long getAccepted() {
+        return accepted;
+    }
+
+    public void setAccepted(Long accepted) {
+        this.accepted = accepted;
+    }
+
     public User getUser() {
         return user;
     }
@@ -161,17 +194,21 @@ public class Contestant {
     @Override
     public String toString() {
         return "Contestant{" +
-                "userId=" + id +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", handle='" + handle + '\'' +
                 ", department='" + department + '\'' +
                 ", session='" + session + '\'' +
                 ", batch='" + batch + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
                 ", roll=" + roll +
                 ", mobileNo='" + mobileNo + '\'' +
                 ", tshirtSize='" + tshirtSize + '\'' +
                 ", country='" + country + '\'' +
+                ", rating=" + rating +
+                ", day=" + day +
+                ", accepted=" + accepted +
+                ", user=" + user +
                 '}';
     }
 }
