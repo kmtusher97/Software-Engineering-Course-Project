@@ -202,6 +202,10 @@ public class Contestant {
         this.submissions = submissions;
     }
 
+    public String testMethod() {
+        return "ok";
+    }
+
     @Override
     public String toString() {
         return "Contestant{" +
