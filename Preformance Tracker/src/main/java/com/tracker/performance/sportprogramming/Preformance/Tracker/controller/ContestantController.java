@@ -40,5 +40,26 @@ public class ContestantController {
         return modelAndView;
     }
 
+    @GetMapping(value = "/TeamFormation")
+    public ModelAndView viewTeamFormation() {
+        ModelAndView modelAndView = new ModelAndView("TeamFormation");
+        List<Contestant> contestantList = contestantServices.getAllContestants();
+
+        // Contestant contestant1, contestant2;
+        Collections.sort(contestantList, (contestant1, contestant2) -> {
+            return (int) (contestant2.getRating() - contestant1.getRating());
+        });
+
+        int teamNo = 1;
+        for(int i = 0; i < contestantList.size(); i += 1) {
+            contestantList.get(i).setTeamNo((long)teamNo);
+            if( i % 3 == 2 ) teamNo += 1;
+        }
+
+        modelAndView.addObject("contestantList", contestantList);
+        return modelAndView;
+    }
+
+
 
 }
