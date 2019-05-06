@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Update User Information'"></title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script th:src="@{/javascript/registration.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+</head>
+<body>
+<div class="container">
+    <br>  <h3 class="text-center">Update Contestant Information</h3>
+    <hr>
+
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 800px;">
+            <h4 class="card-title mt-3 text-center">Update Account</h4>
+            <form th:action="@{'/contestant/save/' + ${contestant.id}}" method="post">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input size="100"
+                           id="name"
+                           name="name"
+                           class="form-control"
+                           type="text"
+                           required
+                           placeholder="Full Name"
+                           th:field="${contestant.name}">
+                </div> <!-- form-group// -->
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-id-card"></i> </span>
+                    </div>
+                    <input id="handle"
+                           name="handle"
+                           class="form-control"
+                           type="text"
+                           required
+                           placeholder="Handle (Unique)"
+                           th:field="${contestant.handle}">
+                </div> <!-- form-group// -->
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    </div>
+                    <input name=""
+                           class="form-control"
+                           placeholder="Mobile number"
+                           type="text"
+                           required
+                           th:field="${contestant.mobileNo}">
+                </div> <!-- form-group// -->
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control"
+                           id="password"
+                           placeholder="Password"
+                           type="password"
+                           required
+                           th:field="${user.password}">
+                </div> <!-- form-group// -->
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control"
+                           id="confirm_password"
+                           placeholder="Repeat password"
+                           type="password"
+                           required
+                           th:field="${user.confirmedPassword}">
+                </div> <!-- form-group// -->
+
+                <div class="form-group">
+                    <input type="submit"
+                           class="btn btn-primary btn-block"
+                           name="submit"
+                           value="submit"
+                           onclick="validatePassword()">
+                </div> <!-- form-group// -->
+
+                <p class="text-center">Have an account? <a th:href="@{/login}">Log In</a> </p>
+            </form>
+        </article>
+    </div> <!-- card.// -->
+
+</div>
+<!--container end.//-->
+
+<br><br>
+<article class="bg-secondary mb-3">
+    <div class="card-body text-center">
+        <h3 class="text-white mt-3">Performance Tracker</h3>
+    </div>
+    <br><br>
+</article>
+
+
+</body>
+</html>

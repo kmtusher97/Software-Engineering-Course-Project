@@ -8,7 +8,7 @@ public interface ContestantServices {
 
     Contestant getContestantById(Long id);
 
-    List<Contestant> getAllContestants();
-
     void saveContestant(Contestant contestant);
+
+    List<Contestant> getAllContestants();
 }

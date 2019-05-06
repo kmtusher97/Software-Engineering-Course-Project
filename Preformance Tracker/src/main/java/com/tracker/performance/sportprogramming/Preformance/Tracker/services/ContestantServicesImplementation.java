@@ -27,7 +27,6 @@ public class ContestantServicesImplementation implements ContestantServices {
 
     @Override
     public List<Contestant> getAllContestants() {
-        List<Contestant> contestantRepositoryAll = contestantRepository.findAll();
-        return contestantRepositoryAll;
+        return contestantRepository.findAll();
     }
 }

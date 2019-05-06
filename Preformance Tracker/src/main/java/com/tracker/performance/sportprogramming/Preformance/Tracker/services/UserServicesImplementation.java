@@ -28,4 +28,9 @@ public class UserServicesImplementation implements UserServices {
     public boolean isAdmin(Long userId) {
         return userId == 1001;
     }
+
+    @Override
+    public User getByUserId(Long id) {
+        return userRepository.getOne(id);
+    }
 }

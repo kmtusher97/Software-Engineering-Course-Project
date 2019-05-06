@@ -55,6 +55,9 @@ public class Contestant {
     @Column
     private Long accepted;
 
+    @Column
+    private Long submissions;
+
     /**
      * has one to one relationship with user
      * have common primary key
@@ -189,6 +192,14 @@ public class Contestant {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Long getSubmissions() {
+        return submissions;
+    }
+
+    public void setSubmissions(Long submissions) {
+        this.submissions = submissions;
     }
 
     @Override

@@ -9,4 +9,6 @@ public interface UserServices {
     void saveOrUpdate(User user);
 
     boolean isAdmin(Long userId);
+
+    User getByUserId(Long id);
 }
